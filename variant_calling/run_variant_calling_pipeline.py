@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import subprocess
 from LabData.DataLoaders.PRSLoader import PRSLoader
+import json
 from scipy import stats
 from LabQueue.qp import qp
 import json
@@ -36,7 +37,6 @@ def run_single_batch(batch, fmap, id, json_dir = "/net/mraid20/ifs/wisdom/segal_
     with open(json_fname, "w") as f:
         json.dump(json_template, f, indent=4)
     subprocess.call([ "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/variant_calling_script.csh" + " " + json_fname], shell=True)
-
 
 def run_all_samples(batch_width, fmap):
     res = {}
@@ -74,10 +74,83 @@ def make_RNA_fmap(basedir):
     fmap.index.name = "SampleName"
     return fmap
 
+def make_merge_fmap():
+    vcfs = {}
+    tbis = {}
+    rundirs = [x for x in os.listdir("/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/cromwell-executions/rna_variant_calling/")]
+    for rundir in rundirs:
+        shards = os.listdir("/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/cromwell-executions/rna_variant_calling/" + rundir + "/call-HaplotypeCaller/")
+        for shard in shards:
+            shardfiles = os.listdir("/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/cromwell-executions/rna_variant_calling/" + rundir + "/call-HaplotypeCaller/" + shard + "/execution/")
+            tbi_file = list(filter(lambda x: x.endswith(".tbi"), shardfiles))
+            vcf_file = list(filter(lambda x: x.endswith(".vcf.gz"), shardfiles))
+            if len(vcf_file) > 0 and len(tbi_file) > 0:
+                path_prefix = "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/cromwell-executions/rna_variant_calling/" + rundir + "/call-HaplotypeCaller/" + shard + "/execution/"
+                vcf_file  = path_prefix + vcf_file[0]
+                tbi_file = path_prefix + tbi_file[0]
+                person_vcf = vcf_file.split("Aligned")[0]
+                person_tbi = tbi_file.split("Aligned")[0]
+                if person_vcf == person_tbi:
+                    vcfs[person_vcf] = vcf_file
+                    tbis[person_vcf] = tbi_file
+    vcfs = pd.Series(vcfs)
+    tbis = pd.Series(tbis)
+    fmap = pd.concat([vcfs, tbis], axis = 1)
+    fmap.index.name = "SampleName"
+    fmap = fmap.astype(str)
+    fmap.index.name = "SampleName"
+    fmap.columns = ["vcf_file_loc", "tbi_file_loc"]
+    return fmap
+
+def make_merge_template():
+    json_data = {
+    "combine_gvcfs.chunked_gvcfs": None,
+     "combine_gvcfs.chunked_indices": None,
+    "combine_gvcfs.refFasta": "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/data/genome_hg38_ERCC92.fa",
+    "combine_gvcfs.refFastaIndex": "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/data/genome_hg38_ERCC92.fa.fai",
+    "combine_gvcfs.refDict": "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/data/genome_hg38_ERCC92.dict",
+    "combine_gvcfs.output_name": "rna_cohort.g.vcf.gz"
+    }
+    return json_data
+
+
+def merge_all_samples(merge_fmap, batch_size = 32):
+    res = {}
+    template = make_merge_template()
+    vcfs = merge_fmap.iloc[:, 0]
+    vcfs_list = vcfs.values.tolist()
+    # Split the list into batches
+    batched_data = [vcfs_list[i:i + batch_size] for i in range(0, len(vcfs_list), batch_size)]
+    template["combine_gvcfs.chunked_gvcfs"] = batched_data
+    tbis = merge_fmap.iloc[:, 1]
+    tbis_list = tbis.values.tolist()
+    # Split the list into batches
+    batched_data_tbis = [tbis_list[i:i + batch_size] for i in range(0, len(tbis_list), batch_size)]
+    template["combine_gvcfs.chunked_indices"] = batched_data_tbis
+    with open("/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/merge.json", "w") as f:
+        json.dump(template, f, indent=4)
+    print(f"Wrote {len(batched_data_tbis)} batches")
+    with qp(jobname="zach", _mem_def=500, _trds_def=110, q = ["himem8.q"]) as q:
+        q.startpermanentrun()
+        res["0"] = q.method(lambda: subprocess.call(["/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/variants/rna_variant_calling/merge_vcf_script.csh"], shell=True), ())
+        for k, v in res.items():
+            try:
+                res[k] = q.waitforresult(v)
+            except Exception:
+                print("Job fell off: ", k)
 
 if __name__ == "__main__":
     sethandlers()
-    os.chdir("/net/mraid20/export/mb/logs/")
-    basedir = "/net/mraid20/ifs/wisdom/segal_lab/jasmine/RNA"
-    fmap = make_RNA_fmap(basedir = basedir)
-    run_all_samples(batch_width = 10, fmap = fmap)
+    do_variants = False
+    if do_variants:
+        os.chdir("/net/mraid20/export/mb/logs/")
+        basedir = "/net/mraid20/ifs/wisdom/segal_lab/jasmine/RNA"
+        fmap = make_RNA_fmap(basedir = basedir)
+        run_all_samples(batch_width = 10, fmap = fmap)
+    do_merge = True
+    if do_merge:
+        os.chdir("/net/mraid20/export/mb/logs/")
+        merge_fmap = make_merge_fmap()
+        merge_all_samples(batch_size = 32, merge_fmap = merge_fmap)
+
+
