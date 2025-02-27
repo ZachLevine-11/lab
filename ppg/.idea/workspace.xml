@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c2192560-3a4a-4212-b5d8-9a511118f8db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/wandb/.nfs000000015812fb4500002140" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20250227_142131-3sruu7ky/.nfs0000000159d4763a00002144" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20250227_142131-3sruu7ky/files/.nfs00000001594ddcc700002141" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20250227_142131-3sruu7ky/logs/.nfs0000000159a9a18300002142" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wandb/run-20250227_142131-3sruu7ky/logs/.nfs0000000159d4763900002143" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ugh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/RNASeq.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/Regression_models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/beginnings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/det_thresh.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/make_ensembl_map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/n_genes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/picking_samples_single_cell.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNASeq_old/temp_picking_samples.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/RNA_fm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/downstream.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/fine_tune_scgpt_no_smoothing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RNA_fm/rna_descriptive_figures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/dl.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/ECGDataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/RetinaScanDataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/after_training_pred.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/chat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/contrastive_experimental.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/ecg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/enrich.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/fine_tune_from_scratch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/general_pred.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/hrv_pred_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/make_figures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/pca.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/retina.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/sdca.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/sweep.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/tcn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dl/wandb_main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/gatk.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gatk/make_input_dir.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/mainwork.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/cgm_metab_assoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/check_cgm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/cluster_things_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/cnv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/compare_gwas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/dl_snpnet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/dl_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/do_ldsc_cmd.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/efficient_snpnet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/exploring_scores.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/genetics_dataset_old.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/gwas_align.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/loop_generate_prs_matrix.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/make_domain_map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/make_scores.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/manual_gwas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/metab_mb_gwas_postprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/modified_tom_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/n_hyp_eff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/prepare_tenk_gwas.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/prepare_ukbb_gwas.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/preprocess_loader_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/prs_ensemblefy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/prs_exclude.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/pvalnode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/q_rds_cache.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/q_single_cache_job.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/rds_single_gwas.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/run_gwas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/saar.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/scores_work.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/ssa_things.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../genetics/train.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/metab_mb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../metab_mb/start.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ppg.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_to_ecg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/better4u.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/counterfactual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kl_figure.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_figures.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/remake_embs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_run_wandb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sweep.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/things.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/variant_calling.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/postprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../variant_calling/run_variant_calling_pipeline.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2jhKCbHybhyBhZCAwQdknMDvZxs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dl/tcn.py" />
+    <property name="settings.editor.selected.configurable" value="PyScientificConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.single_run_wandb">
+    <configuration name="all_to_ecg" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/all_to_ecg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="counterfactual" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/counterfactual.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dl" type="PythonConfigurationType" factoryName="Python">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/genetics/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="make_figures" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/make_figures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ref_alt_plot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/deep_learning/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/rna_variant_calling" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/rna_variant_calling/ref_alt_plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="remake_embs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/remake_embs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rna_descriptive_figures" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/deep_learning/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../RNA_fm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../RNA_fm/rna_descriptive_figures.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="single_run_wandb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/single_run_wandb.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train_v3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ppg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/envs/rna/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/rna_mlm/src" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/rna_mlm/src/train_v3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.dl" />
+      <item itemvalue="Python.all_to_ecg" />
+      <item itemvalue="Python.rna_descriptive_figures" />
+      <item itemvalue="Python.make_figures" />
+      <item itemvalue="Python.ref_alt_plot" />
+      <item itemvalue="Python.single_run_wandb" />
+      <item itemvalue="Python.remake_embs" />
+      <item itemvalue="Python.train_v3" />
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.counterfactual" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.single_run_wandb" />
+        <item itemvalue="Python.remake_embs" />
+        <item itemvalue="Python.counterfactual" />
+        <item itemvalue="Python.models" />
+        <item itemvalue="Python.train_v3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2192560-3a4a-4212-b5d8-9a511118f8db" name="Changes" comment="" />
+      <created>1721833741870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721833741870</updated>
+      <workItem from="1721833743078" duration="23155000" />
+      <workItem from="1721858459409" duration="14160000" />
+      <workItem from="1722094899688" duration="7469000" />
+      <workItem from="1722144223632" duration="22068000" />
+      <workItem from="1722249398075" duration="13916000" />
+      <workItem from="1722290267138" duration="9408000" />
+      <workItem from="1722342001076" duration="7694000" />
+      <workItem from="1722421464917" duration="25928000" />
+      <workItem from="1722469077472" duration="4510000" />
+      <workItem from="1722512530770" duration="17863000" />
+      <workItem from="1722609069813" duration="17553000" />
+      <workItem from="1722690756517" duration="13523000" />
+      <workItem from="1722766172731" duration="18970000" />
+      <workItem from="1722861230308" duration="11402000" />
+      <workItem from="1722897647047" duration="6330000" />
+      <workItem from="1722942532425" duration="6752000" />
+      <workItem from="1722952410262" duration="2791000" />
+      <workItem from="1722976229788" duration="3758000" />
+      <workItem from="1723021437194" duration="11000" />
+      <workItem from="1723032117260" duration="280000" />
+      <workItem from="1723032487404" duration="121000" />
+      <workItem from="1723032609832" duration="143000" />
+      <workItem from="1723032753723" duration="5167000" />
+      <workItem from="1723038170691" duration="6219000" />
+      <workItem from="1723638852947" duration="11581000" />
+      <workItem from="1723717015264" duration="10379000" />
+      <workItem from="1723964983847" duration="50000" />
+      <workItem from="1723967219303" duration="7931000" />
+      <workItem from="1723989039604" duration="426000" />
+      <workItem from="1724173119734" duration="2034000" />
+      <workItem from="1724236147794" duration="70000" />
+      <workItem from="1724243003621" duration="12283000" />
+      <workItem from="1724323558588" duration="1191000" />
+      <workItem from="1724324836259" duration="11684000" />
+      <workItem from="1724585570988" duration="358000" />
+      <workItem from="1724680524615" duration="6516000" />
+      <workItem from="1724688836597" duration="27000" />
+      <workItem from="1724759511886" duration="10541000" />
+      <workItem from="1724835565295" duration="6645000" />
+      <workItem from="1724930526651" duration="9711000" />
+      <workItem from="1725106224350" duration="7479000" />
+      <workItem from="1725179772463" duration="13541000" />
+      <workItem from="1725270193701" duration="39000" />
+      <workItem from="1726743726856" duration="11040000" />
+      <workItem from="1726817872195" duration="4914000" />
+      <workItem from="1727775732256" duration="642000" />
+      <workItem from="1728392765579" duration="533000" />
+      <workItem from="1729289173392" duration="750000" />
+      <workItem from="1729429793699" duration="4343000" />
+      <workItem from="1729504071201" duration="1681000" />
+      <workItem from="1729506771862" duration="10867000" />
+      <workItem from="1729584320402" duration="16358000" />
+      <workItem from="1730191625195" duration="2870000" />
+      <workItem from="1730287137014" duration="826000" />
+      <workItem from="1730288031278" duration="16474000" />
+      <workItem from="1730368700892" duration="4465000" />
+      <workItem from="1730640473504" duration="38000" />
+      <workItem from="1730976317821" duration="12130000" />
+      <workItem from="1731232920335" duration="20916000" />
+      <workItem from="1731324412594" duration="11950000" />
+      <workItem from="1731400927824" duration="7895000" />
+      <workItem from="1731421780250" duration="23000" />
+      <workItem from="1731507773285" duration="3327000" />
+      <workItem from="1731572832297" duration="5710000" />
+      <workItem from="1731580730484" duration="7258000" />
+      <workItem from="1731602506085" duration="1811000" />
+      <workItem from="1731663219410" duration="9861000" />
+      <workItem from="1731837659753" duration="15440000" />
+      <workItem from="1731859624995" duration="4001000" />
+      <workItem from="1731922630134" duration="6920000" />
+      <workItem from="1731935691644" duration="8008000" />
+      <workItem from="1731947655346" duration="135000" />
+      <workItem from="1731947861035" duration="6184000" />
+      <workItem from="1731965252614" duration="300000" />
+      <workItem from="1731965590632" duration="69000" />
+      <workItem from="1732009994363" duration="2809000" />
+      <workItem from="1732024393981" duration="935000" />
+      <workItem from="1732101865026" duration="19225000" />
+      <workItem from="1732125896391" duration="623000" />
+      <workItem from="1732185712594" duration="18089000" />
+      <workItem from="1732269901692" duration="1241000" />
+      <workItem from="1732436581124" duration="19486000" />
+      <workItem from="1732458293614" duration="12667000" />
+      <workItem from="1732529794638" duration="24113000" />
+      <workItem from="1732571364768" duration="3521000" />
+      <workItem from="1732574902322" duration="8004000" />
+      <workItem from="1732621244135" duration="10614000" />
+      <workItem from="1732779941446" duration="2248000" />
+      <workItem from="1732797004339" duration="31876000" />
+      <workItem from="1732974481082" duration="12138000" />
+      <workItem from="1732986736285" duration="1845000" />
+      <workItem from="1732988735023" duration="9856000" />
+      <workItem from="1733147481598" duration="15806000" />
+      <workItem from="1733179789754" duration="159000" />
+      <workItem from="1733180203259" duration="281000" />
+      <workItem from="1733180529464" duration="928000" />
+      <workItem from="1733212005587" duration="23024000" />
+      <workItem from="1733255797725" duration="860000" />
+      <workItem from="1733303250859" duration="26496000" />
+      <workItem from="1733352423404" duration="1359000" />
+      <workItem from="1733488641320" duration="10975000" />
+      <workItem from="1733574745361" duration="1775000" />
+      <workItem from="1733603913363" duration="341000" />
+      <workItem from="1733604413001" duration="1149000" />
+      <workItem from="1733605642342" duration="900000" />
+      <workItem from="1733645488278" duration="12770000" />
+      <workItem from="1733668075443" duration="762000" />
+      <workItem from="1733671382166" duration="299000" />
+      <workItem from="1733671692165" duration="361000" />
+      <workItem from="1733672071845" duration="6017000" />
+      <workItem from="1733736134109" duration="20467000" />
+      <workItem from="1733758959106" duration="34000" />
+      <workItem from="1733759034235" duration="55000" />
+      <workItem from="1733759151123" duration="6974000" />
+      <workItem from="1733784285695" duration="19114000" />
+      <workItem from="1733908851339" duration="13978000" />
+      <workItem from="1733995188064" duration="13205000" />
+      <workItem from="1734019896569" duration="1501000" />
+      <workItem from="1734089110803" duration="9890000" />
+      <workItem from="1734113013170" duration="1223000" />
+      <workItem from="1734182037241" duration="6570000" />
+      <workItem from="1734250606645" duration="9905000" />
+      <workItem from="1734335051913" duration="26051000" />
+      <workItem from="1734363633622" duration="707000" />
+      <workItem from="1734428121469" duration="8521000" />
+      <workItem from="1734443753629" duration="16719000" />
+      <workItem from="1734467553325" duration="2590000" />
+      <workItem from="1734509174034" duration="7336000" />
+      <workItem from="1734548954476" duration="423000" />
+      <workItem from="1734607142768" duration="21263000" />
+      <workItem from="1734628836798" duration="3845000" />
+      <workItem from="1734658551262" duration="47000" />
+      <workItem from="1734698541178" duration="14937000" />
+      <workItem from="1734770647960" duration="14034000" />
+      <workItem from="1734785075281" duration="8831000" />
+      <workItem from="1734860868341" duration="4266000" />
+      <workItem from="1734866393043" duration="60000" />
+      <workItem from="1734868591561" duration="1934000" />
+      <workItem from="1734871263629" duration="425000" />
+      <workItem from="1734871981508" duration="150000" />
+      <workItem from="1734872875927" duration="2444000" />
+      <workItem from="1734875576809" duration="11874000" />
+      <workItem from="1734941809713" duration="15254000" />
+      <workItem from="1734963530597" duration="5577000" />
+      <workItem from="1735037215861" duration="13134000" />
+      <workItem from="1735058905238" duration="40000" />
+      <workItem from="1735113064771" duration="17433000" />
+      <workItem from="1735144219259" duration="6897000" />
+      <workItem from="1735205415932" duration="13425000" />
+      <workItem from="1735220632525" duration="3171000" />
+      <workItem from="1735224294080" duration="956000" />
+      <workItem from="1735302302729" duration="12155000" />
+      <workItem from="1735388258183" duration="6971000" />
+      <workItem from="1735453505345" duration="18271000" />
+      <workItem from="1735500701591" duration="3805000" />
+      <workItem from="1735546699226" duration="30434000" />
+      <workItem from="1735578843534" duration="12328000" />
+      <workItem from="1735603829854" duration="9000" />
+      <workItem from="1735633704480" duration="10000" />
+      <workItem from="1735636534864" duration="18913000" />
+      <workItem from="1735673768177" duration="242000" />
+      <workItem from="1735733494557" duration="476000" />
+      <workItem from="1735734150509" duration="5098000" />
+      <workItem from="1735767188160" duration="416000" />
+      <workItem from="1735767752530" duration="2964000" />
+      <workItem from="1735812514605" duration="2182000" />
+      <workItem from="1735814720148" duration="286000" />
+      <workItem from="1735822678596" duration="124000" />
+      <workItem from="1735822820761" duration="670000" />
+      <workItem from="1735823512518" duration="17828000" />
+      <workItem from="1735858698998" duration="4584000" />
+      <workItem from="1735908768287" duration="9715000" />
+      <workItem from="1735989238524" duration="17546000" />
+      <workItem from="1736032584553" duration="1332000" />
+      <workItem from="1736065325396" duration="11981000" />
+      <workItem from="1736079812187" duration="41000" />
+      <workItem from="1736081560967" duration="26000" />
+      <workItem from="1736092333439" duration="2371000" />
+      <workItem from="1736161982684" duration="12991000" />
+      <workItem from="1736238875017" duration="22211000" />
+      <workItem from="1736334935160" duration="4669000" />
+      <workItem from="1736418991399" duration="17484000" />
+      <workItem from="1736503920536" duration="6249000" />
+      <workItem from="1736671742067" duration="15734000" />
+      <workItem from="1736716394600" duration="3986000" />
+      <workItem from="1736768567252" duration="8292000" />
+      <workItem from="1736777085333" duration="17936000" />
+      <workItem from="1736807360570" duration="9114000" />
+      <workItem from="1736818640248" duration="8758000" />
+      <workItem from="1736852216846" duration="21489000" />
+      <workItem from="1736933919990" duration="19466000" />
+      <workItem from="1736979423669" duration="6137000" />
+      <workItem from="1737022854191" duration="7281000" />
+      <workItem from="1737101989325" duration="13430000" />
+      <workItem from="1737194816986" duration="16825000" />
+      <workItem from="1737272958457" duration="18995000" />
+      <workItem from="1737365260002" duration="20440000" />
+      <workItem from="1737460438071" duration="8246000" />
+      <workItem from="1737554116323" duration="1455000" />
+      <workItem from="1737633959826" duration="704000" />
+      <workItem from="1737889763433" duration="5125000" />
+      <workItem from="1737901740859" duration="5058000" />
+      <workItem from="1737982734076" duration="8210000" />
+      <workItem from="1737991111420" duration="11062000" />
+      <workItem from="1738013286100" duration="4123000" />
+      <workItem from="1738017425284" duration="40785000" />
+      <workItem from="1740651111621" duration="10051000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../RNA_curr/main.py</url>
+          <line>453</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/LabData/LabData/DataLoaders/helpers_10k.py</url>
+          <line>116</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ppg$fine_tune_scgpt_no_smoothing.coverage" NAME="fine_tune_scgpt_no_smoothing Coverage Results" MODIFIED="1724585890226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RNA_fm" />
+    <SUITE FILE_PATH="coverage/ppg$a1.coverage" NAME="a1 Coverage Results" MODIFIED="1733246547507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$main.coverage" NAME="main Coverage Results" MODIFIED="1723989339394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RNA_curr" />
+    <SUITE FILE_PATH="coverage/ppg$downstream.coverage" NAME="downstream Coverage Results" MODIFIED="1725196428282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../RNA_fm" />
+    <SUITE FILE_PATH="coverage/ppg$models.coverage" NAME="models Coverage Results" MODIFIED="1734885103454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$wandb_main.coverage" NAME="wandb_main Coverage Results" MODIFIED="1722095487320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../dl" />
+    <SUITE FILE_PATH="coverage/ppg$sweep.coverage" NAME="sweep Coverage Results" MODIFIED="1731937785535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$remake_embs.coverage" NAME="remake_embs Coverage Results" MODIFIED="1734431287867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$single_run_wandb.coverage" NAME="single_run_wandb Coverage Results" MODIFIED="1740656532894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$train_v3.coverage" NAME="train_v3 Coverage Results" MODIFIED="1734549171348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/rna_mlm/src" />
+    <SUITE FILE_PATH="coverage/ppg$counterfactual.coverage" NAME="counterfactual Coverage Results" MODIFIED="1736952556940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$trial.coverage" NAME="trial Coverage Results" MODIFIED="1732107839600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ppg$things.coverage" NAME="things Coverage Results" MODIFIED="1725196407676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
