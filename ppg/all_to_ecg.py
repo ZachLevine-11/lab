@@ -389,13 +389,8 @@ def do(config):
     if config.weight_sharing:
         encoder_lstm = nn.LSTM(input_size=12, proj_size=0, hidden_size=config.hidden_size, num_layers=config.num_layers,
                                batch_first=False, dropout=config.encoder_dropout_prob, bidirectional=True)
-        decoder_lstm = nn.LSTM(input_size=3, proj_size=0,
-                               hidden_size=config.hidden_size, num_layers=config.num_layers,
-                               batch_first=False, dropout=config.encoder_dropout_prob, bidirectional=False)
     else:
         encoder_lstm = None
-        decoder_lstm = None
-
     if config.load_models:
         saved_model_dir = "/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/ppg/saved_models/"
         saved_models = loader_set_dict[config.loader_set]
@@ -431,7 +426,6 @@ def do(config):
                              encoder_dropout_prob=config.encoder_dropout_prob,
                              dt=config.dt,
                              encoder_lstm=encoder_lstm,
-                             decoder_lstm=decoder_lstm,
                              num_baseline_features=len(ds_input.df.columns),
                              temperature=config.temperature).to(device)
                     for ds_input in tabular_datasets

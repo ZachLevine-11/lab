@@ -113,7 +113,7 @@ class BlackBoxAutoencoder(nn.Module):
         return states, None
 
 class PPGtoECG(torch.nn.Module):
-    def __init__(self, hidden_size, num_layers, encoder_dropout_prob, encoder_lstm, decoder_lstm, num_baseline_features = 49, temperature = 1.0, dt = 0.1):
+    def __init__(self, hidden_size, num_layers, encoder_dropout_prob, encoder_lstm, num_baseline_features = 49, temperature = 1.0, dt = 0.1):
         super().__init__()
         self.encoding_size = 50
         self.temperature = nn.Parameter(torch.FloatTensor([temperature]).to(torch.device("cuda" if torch.cuda.is_available() else "cpu")), requires_grad = False)
@@ -132,11 +132,6 @@ class PPGtoECG(torch.nn.Module):
         ##the complexity of the decoder network acts as a regularizer on the neural networks
         self.decoder_hidden_size = hidden_size
         self.decoder_num_layers = num_layers
-        if decoder_lstm is None:
-            self.decoder_model = nn.LSTM(input_size=self.state_size, proj_size=0, hidden_size=self.decoder_hidden_size, num_layers=self.decoder_num_layers,
-                                    batch_first=False, dropout=encoder_dropout_prob, bidirectional=False)
-        else:
-            self.decoder_model = decoder_lstm
         self.norm_in = torch.nn.BatchNorm1d(1)
         self.norm_out = torch.nn.BatchNorm1d(1)
         self.param_size = 23
@@ -187,7 +182,7 @@ class PPGtoECG(torch.nn.Module):
                                       out_features= self.encoding_size)
         self.cat_act = nn.GELU()
         self.mixture_weights = nn.Parameter(torch.ones(3) / 3.0, requires_grad = True)
-        self.decoder_proj = ConvLinear(in_features=self.decoder_hidden_size, out_features=12, channel_last=True)
+        self.decoder_proj = ConvLinear(in_features=3, out_features=12, channel_last=True)
         self.norm = nn.LayerNorm(self.num_baseline_features)
 
     ## as close as we can get to the constrained scale
@@ -326,7 +321,5 @@ class PPGtoECG(torch.nn.Module):
         else:
             nonseq_encoding_sample = z_in
         states, param, init_state, jac = self.decode(nonseq_encoding_sample, length_sim, length_window, device)
-        decoder_input = states.permute(1, 0, 2) #[batch, time, state] --> [time, batch, state]
-        output, (_, _) = self.decoder_model(decoder_input)
-        decoding = self.decoder_proj(output)
+        decoding = self.decoder_proj(states).permute(1, 0, 2)
         return decoding, jac
