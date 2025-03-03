@@ -23,7 +23,7 @@ import os
 from datasets import ecg_dataset_pheno, tenk_tabular_dataset, sleep_dataset_pheno
 from single_run_wandb import sweep_configuration as config
 from LabData.DataLoaders.ECGTextLoader import ECGTextLoader
-from all_to_ecg import do_forward, get_label, batch_director, add_input, make_ecg_fmap, load_split, extract_domain_name
+from all_to_ecg import load_split
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from LabData.DataLoaders.MedicalConditionLoader import MedicalConditionLoader
@@ -319,14 +319,13 @@ def make_all(z):
     all = pd.concat([all_min, all_max], axis = 1)
     return all, all_concat_cols
 
-
 def read_load_embs(saved_emb_dir,):
     z_first_all_integrated = {}
     z_first_all_solo = {}
-    saved_embs = ["iglu_integrated_time.csv", "DEXA_integrated_time.csv", "Ultrasound_integrated_time.csv", "RetinaScan_integrated_time.csv", "BodyMeasures_integrated_time.csv"]
+    saved_embs = list(filter(lambda x: "integrated" in x, os.listdir(saved_emb_dir)))
     for emb in saved_embs:
         z_first_all_integrated.update({emb.split(".csv")[0]: pd.read_csv(f"{saved_emb_dir}{emb}").rename({"Unnamed: 0": "RegistrationCode"}, axis = 1).set_index("RegistrationCode")})
-    saved_embs = ["iglu_time.csv", "DEXA_time.csv", "Ultrasound_time.csv", "RetinaScan_time.csv", "BodyMeasures_time.csv"]
+    saved_embs = list(filter(lambda x: "integrated" not in x, os.listdir(saved_emb_dir)))
     for emb in saved_embs:
         z_first_all_solo.update({emb.split(".csv")[0]: pd.read_csv(f"{saved_emb_dir}{emb}").rename(
             {"Unnamed: 0": "RegistrationCode"}, axis=1).set_index("RegistrationCode")})
@@ -346,17 +345,21 @@ if __name__ == "__main__":
     np.random.seed(0)
     torch.manual_seed(0)
     z_first_all_solo_ecg, z_first_all_integrated_ecg = read_load_embs(saved_emb_dir)
-    tabular_datasets, tabular_domains, tabular_domain_labels, checkpoints, datasets_to_checkpoints = load_things(saved_model_dir, do_integrated = False)
+    tabular_datasets, tabular_domains, tabular_domain_labels, checkpoints, datasets_to_checkpoints = load_things(saved_model_dir, do_integrated = True)
     #all_blackbox, all_concat_blackbox_cols = make_all(z_first_all_blackbox)
     all_mech_ecg, all_concat_mech_ecg = make_all({k:v for k,v in z_first_all_integrated_ecg.items()})
     all_mech_features, all_concat_mech_features = make_all({k:v for k,v in z_first_all_integrated_ecg.items()})
-    diseases = make_diseases_df(z_first_all_solo_ecg["RetinaScan_time"].index)
+    diseases = make_diseases_df(z_first_all_integrated_ecg["BodyMeasures_integrated"].index)
     features_df, comparator = make_labdata_dfs(tabular_datasets, all_mech_features.index)
     do_more = False
     labels = ['age', "Creatinine", 'Total_C', 'non_HDL_C', 'LDL_TG', 'HDL_TG', ]
     short_labels = ['age', "Creatinine", "waist(cm)", 'Total_C', 'non_HDL_C', 'LDL_TG', 'HDL_TG']
     label_mapper = dict(zip(labels, short_labels))
-    do_validation_figure_clincal = True
+
+    cv(z_first_all_integrated_ecg["BodyMeasures_integrated_time"], features_df, what="age", how="ols", task="r")[
+        0].corr()
+
+    do_validation_figure_clincal = False
     if do_validation_figure_clincal:
         ecgtext = ECGTextLoader().get_data(research_stage="baseline",
                                            study_ids=list(range(100)) + list(range(1000, 1011, 1))).df
@@ -437,7 +440,7 @@ if __name__ == "__main__":
         plt.show()
 
 
-    do_validation_figure_voltage = True
+    do_validation_figure_voltage = False
     if do_validation_figure_voltage:
         fig, axes = plt.subplots(6, 1, figsize=(7, 20))
         axes = axes.flatten()
@@ -510,7 +513,7 @@ if __name__ == "__main__":
         plt.suptitle("CardioPRIME Validation: Learned Feature Validation", fontsize=24, y=1.02)
         plt.show()
 
-    disease_plot = True
+    disease_plot = False
     if disease_plot:
         k_means = 6
         # Create a figure with subplots
