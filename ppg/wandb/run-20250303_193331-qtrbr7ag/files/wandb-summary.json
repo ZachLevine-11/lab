@@ -1,0 +1,1 @@
+{"BodyMeasures_MSE second train": 25.45846939086914, "_timestamp": 1741023289.8821237, "_runtime": 78.51624870300293, "_step": 11, "BodyMeasures_jac train": 4.753741264343262, "BodyMeasures_time second train": 30.21221160888672, "BodyMeasures_kl2  train": 21.70513916015625, "BodyMeasures _kl train": 0, "BodyMeasures _total train": 51.91735076904297}
