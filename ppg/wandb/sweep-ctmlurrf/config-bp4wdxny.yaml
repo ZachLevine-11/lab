@@ -1,0 +1,66 @@
+wandb_version: 1
+
+alpha_dtw:
+  value: 0
+batch_size:
+  value: 15
+do_eval:
+  value: true
+do_integration:
+  value: true
+dt:
+  value: 0
+encoder_dropout_prob:
+  value: 0
+epochs:
+  value: 250
+eval_every:
+  value: 250
+first_to_second_alpha:
+  value: 0
+gamma:
+  value: 0.1
+hidden_size:
+  value: 128
+jac_alpha:
+  value: 0.05
+kl_alpha1:
+  value: 2
+kl_alpha2:
+  value: 1.5
+length_sim:
+  value: 400
+length_window:
+  value: 4000
+load_models:
+  value: false
+loader_set:
+  value: 7
+lr:
+  value: 0.0001
+make_new_split:
+  value: true
+mechanistic:
+  value: true
+mse_alpha:
+  value: 100
+normalize_dtw_loss:
+  value: false
+num_layers:
+  value: 4
+plot:
+  value: true
+plot_every:
+  value: 25
+save_every:
+  value: 100
+temperature:
+  value: 1
+total_eval_n:
+  value: 100
+total_test_n:
+  value: 2
+warmup_steps:
+  value: 0
+weight_sharing:
+  value: false

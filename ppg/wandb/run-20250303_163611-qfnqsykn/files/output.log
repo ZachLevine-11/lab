@@ -1,0 +1,62 @@
+
+Using cuda
+Epoch 1/250
+tensor(45.0750, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(47.7047, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(36.4442, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(34.6053, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(31.7216, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(27.5200, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(29.5681, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(27.8043, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(30.7204, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(24.3563, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(25.3890, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(23.9117, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 1 complete. Avg training loss = 35.1145
+Epoch 2/250
+tensor(20.1088, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(22.0290, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(25.1098, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(20.7736, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(22.6621, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(19.8759, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(20.6319, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(20.9108, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(18.9224, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(19.6330, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.8098, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.4607, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 2 complete. Avg training loss = 24.1162
+Epoch 3/250
+tensor(15.8201, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(20.8875, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.7468, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(18.4349, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(16.1824, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.0634, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(18.7977, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.6247, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.1258, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.7493, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(16.2237, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(14.7356, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 3 complete. Avg training loss = 22.2930
+Epoch 4/250
+tensor(14.6377, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(16.6601, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(20.0451, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.7176, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.7935, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.4099, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.3093, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(19.2162, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(18.4804, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(14.7314, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.6094, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(16.7242, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 4 complete. Avg training loss = 19.6783
+Epoch 5/250
+tensor(14.6977, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(15.2614, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(17.5728, device='cuda:0', grad_fn=<MulBackward0>)

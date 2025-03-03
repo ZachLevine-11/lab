@@ -166,10 +166,8 @@ class tenk_tabular_dataset(Dataset):
         return torch.nan_to_num(torch.Tensor(self.df.loc[tenk_id].to_numpy().reshape(1, -1)))
 
 
-# Some constants from your code
 min_ecg_val = -0.4
 max_ecg_val = 1.2
-
 
 def min_max_scaling(data, dim, a=min_ecg_val, b=max_ecg_val, how="minmax"):
     if how == "minmax":
@@ -314,39 +312,74 @@ def get_domain_dataloaders(
 
     for domain_label, ds_tabular in tabular_datasets.items():
         # Build the train dataset & loader
-        train_dataset = ECGTabularDataset(
-            ids_list=train_people,
-            ds_ecg=ds_ecg,
-            ds_tabular=ds_tabular,
-            length_window=config.length_window,
-            length_sim=config.length_sim
-        )
-        train_loader = DataLoader(
-            train_dataset,
-            batch_size=config.batch_size,
-            shuffle=True,
-            num_workers=6,  # parallel workers
-            collate_fn=ecg_tabular_collate_fn,
-            drop_last=False
-        )
-        train_loaders[domain_label] = train_loader
+        try:
+            train_dataset = ECGTabularDataset(
+                ids_list=train_people,
+                ds_ecg=ds_ecg,
+                ds_tabular=ds_tabular,
+                length_window=config.length_window,
+                length_sim=config.length_sim
+            )
+            train_loader = DataLoader(
+                train_dataset,
+                batch_size=config.batch_size,
+                shuffle=True,
+                num_workers=6,  # parallel workers
+                collate_fn=ecg_tabular_collate_fn,
+                drop_last=False
+            )
+        except AttributeError:
+            train_dataset = ECGTabularDataset(
+                ids_list=train_people,
+                ds_ecg=ds_ecg,
+                ds_tabular=ds_tabular,
+                length_window=config["length_window"],
+                length_sim=config["length_sim"] ##outside of wandb runs, this is a simple dict
+            )
 
+            train_loader = DataLoader(
+                train_dataset,
+                batch_size=config["batch_size"],
+                shuffle=True,
+                num_workers=6,  # parallel workers
+                collate_fn=ecg_tabular_collate_fn,
+                drop_last=False
+            )
+
+        train_loaders[domain_label] = train_loader
+        try:
         # Build the eval dataset & loader
-        eval_dataset = ECGTabularDataset(
-            ids_list=eval_people,
-            ds_ecg=ds_ecg,
-            ds_tabular=ds_tabular,
-            length_window=config.length_window,
-            length_sim=config.length_sim
-        )
-        eval_loader = DataLoader(
+            eval_dataset = ECGTabularDataset(
+                ids_list=eval_people,
+                ds_ecg=ds_ecg,
+                ds_tabular=ds_tabular,
+                length_window=config.length_window,
+                length_sim=config.length_sim
+            )
+            eval_loader = DataLoader(
             eval_dataset,
             batch_size=config.batch_size,
             shuffle=False,
             num_workers=6,
             collate_fn=ecg_tabular_collate_fn,
             drop_last=False
-        )
+            )
+        except AttributeError:
+            eval_dataset = ECGTabularDataset(
+                ids_list=eval_people,
+                ds_ecg=ds_ecg,
+                ds_tabular=ds_tabular,
+                length_window=config["length_window"],
+                length_sim=config["length_sim"]
+                )
+            eval_loader = DataLoader(
+                eval_dataset,
+                batch_size=config["batch_size"],
+                shuffle=False,
+                num_workers=6,
+                collate_fn=ecg_tabular_collate_fn,
+                drop_last=False
+            )
         eval_loaders[domain_label] = eval_loader
 
     return train_loaders, eval_loaders

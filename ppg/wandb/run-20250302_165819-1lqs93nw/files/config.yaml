@@ -1,0 +1,129 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.3
+    cli_version: 0.17.3
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1740927500
+    t:
+      1:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      3:
+      - 23
+      - 37
+      4: 3.11.3
+      5: 0.17.3
+      8:
+      - 5
+      - 13
+      13: linux-x86_64
+alpha_dtw:
+  desc: null
+  value: 0
+batch_size:
+  desc: null
+  value: 60
+do_eval:
+  desc: null
+  value: true
+do_integration:
+  desc: null
+  value: true
+dt:
+  desc: null
+  value: 0
+encoder_dropout_prob:
+  desc: null
+  value: 0
+epochs:
+  desc: null
+  value: 250
+eval_every:
+  desc: null
+  value: 250
+first_to_second_alpha:
+  desc: null
+  value: 0
+gamma:
+  desc: null
+  value: 0.1
+hidden_size:
+  desc: null
+  value: 128
+jac_alpha:
+  desc: null
+  value: 0.05
+kl_alpha1:
+  desc: null
+  value: 2
+kl_alpha2:
+  desc: null
+  value: 1.5
+length_sim:
+  desc: null
+  value: 400
+length_window:
+  desc: null
+  value: 4000
+load_models:
+  desc: null
+  value: false
+loader_set:
+  desc: null
+  value: 7
+lr:
+  desc: null
+  value: 0.001
+make_new_split:
+  desc: null
+  value: true
+mechanistic:
+  desc: null
+  value: true
+mse_alpha:
+  desc: null
+  value: 100
+normalize_dtw_loss:
+  desc: null
+  value: false
+num_layers:
+  desc: null
+  value: 2
+plot:
+  desc: null
+  value: true
+plot_every:
+  desc: null
+  value: 25
+save_every:
+  desc: null
+  value: 100
+temperature:
+  desc: null
+  value: 1
+total_eval_n:
+  desc: null
+  value: 100
+total_test_n:
+  desc: null
+  value: 2
+warmup_steps:
+  desc: null
+  value: 0
+weight_sharing:
+  desc: null
+  value: false

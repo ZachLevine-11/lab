@@ -62,27 +62,53 @@ def align_ecg(true_peaks, ecg_pred):
         ecg_pred = ecg_pred[:int(avg_shift // 1)]
     return ecg_pred
 
-def ecg_plot(sim_results, ecg_true_eval, i = 0):
-    plt.figure(figsize = (40, 15))
-    fig, ax = plt.subplots(1, 1, figsize=(40, 15), sharex=True)
-    ecg_true = ecg_true_eval[0, 0 ,:].detach().cpu().flatten()
-    ax.plot(list(range(len(ecg_true))), ecg_true, label="Ground truth ECG",
-            c="black", lw = 2)
-    for label, res in sim_results.items():
-        pred = res["pred_tabular"]
-        if pred is not None:
-            ecg_pred = pred[0, 0,:].detach().cpu().flatten()
-            ax.plot(list(range(ecg_pred.shape[0])), ecg_pred,
-                    label="Predicted from " + label)
-        pred2 = res["pred_time"]
-        pred2 = pred2[0, 0, :].detach().cpu().flatten()
-        ax.plot(list(range(pred2.shape[0])), pred2,
-                       label="AE Output " + label)
-        ax.set_ylabel("Voltage (mV)")
-        ax.set_xlabel('Time (t))')
-        ax.legend()
-    plt.savefig("/home/zacharyl/Desktop/ecg/eval_" + label + "_" + str(i) + ".jpg")
 
+def ecg_plot(sim_results, ecg_true_eval, i=0):
+    """
+    Plots the ground truth and predicted ECG signals for all leads (channels).
+
+    Parameters:
+      sim_results (dict): A dictionary where each key maps to a dict containing
+                          keys "pred_tabular" and "pred_time", each holding a tensor.
+      ecg_true_eval (tensor): A tensor of shape (batch, leads, time) with ground truth ECG.
+      i (int): An index appended to the saved file name.
+    """
+    n_leads = ecg_true_eval.shape[1]
+    # Create a subplot for each lead. Adjust figsize as needed.
+    fig, axes = plt.subplots(n_leads, 1, figsize=(40, 5 * n_leads), sharex=True)
+    # If there's only one lead, wrap axes in a list for consistency.
+    if n_leads == 1:
+        axes = [axes]
+    time_range = range(ecg_true_eval.shape[2])
+    for lead in range(n_leads):
+        ax = axes[lead]
+        # Plot ground truth for the current lead.
+        ecg_true = ecg_true_eval[0, lead, :].detach().cpu().flatten()
+        ax.plot(time_range, ecg_true, label="Ground truth ECG", c="black", lw=2)
+
+        # Plot predictions from each simulation result.
+        for label, res in sim_results.items():
+            # Plot "pred_tabular" if available.
+            pred_tab = res.get("pred_tabular")
+            if pred_tab is not None:
+                ecg_pred = pred_tab[0, lead, :].detach().cpu().flatten()
+                ax.plot(range(ecg_pred.shape[0]), ecg_pred,
+                        label="Predicted from " + label)
+
+            # Plot "pred_time"
+            pred_time = res.get("pred_time")
+            if pred_time is not None:
+                ecg_pred2 = pred_time[0, lead, :].detach().cpu().flatten()
+                ax.plot(range(ecg_pred2.shape[0]), ecg_pred2,
+                        label="AE Output " + label)
+
+        ax.set_ylabel("Voltage (mV)")
+        ax.set_title(f"Lead {lead}")
+        ax.legend()
+
+    axes[-1].set_xlabel("Time (t)")
+    plt.tight_layout()
+    plt.savefig("/home/zacharyl/Desktop/ecg/eval_" + label + "_" + str(i) + ".jpg")
 
 def do_forward(config, model, input, length_sim, length_window, ecg_no_interp, ecg_true_interp, mechanistic = True, do_output_first = True):
     do_output_first = mechanistic
@@ -297,11 +323,6 @@ def do_eval_pass(config,
         )
         total_mse += mse_eval.item()
         num_batches += 1
-
-        # ---------------------------
-        # Restore the original plot saving
-        # (We build a small dict to pass into ecg_plot(...))
-        # ---------------------------
         if config.plot and (batch_idx % config.plot_every == 0):
             sim_results = {
                 label: {
@@ -365,13 +386,10 @@ def do(config):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using " + str(device))
     lr = config.lr
-    current_step = 0
-    batch_size_train = config.batch_size
-
     if config.weight_sharing:
         encoder_lstm = nn.LSTM(input_size=12, proj_size=0, hidden_size=config.hidden_size, num_layers=config.num_layers,
                                batch_first=False, dropout=config.encoder_dropout_prob, bidirectional=True)
-        decoder_lstm = nn.LSTM(input_size=config.hidden_size, proj_size=0,
+        decoder_lstm = nn.LSTM(input_size=3, proj_size=0,
                                hidden_size=config.hidden_size, num_layers=config.num_layers,
                                batch_first=False, dropout=config.encoder_dropout_prob, bidirectional=False)
     else:
@@ -465,9 +483,30 @@ def do(config):
     )
 
     for epoch in range(config.epochs):
+        # ----------------- TRAINING PASS -----------------
         print(f"Epoch {epoch + 1}/{config.epochs}")
+        epoch_train_loss = 0.0
+        randomized_labels = list(np.random.permutation(list(tabular_domain_labels.keys())))
+        random_order = dict(zip(
+            randomized_labels,
+            map(lambda x: tabular_domain_labels.get(x), randomized_labels)
+        ))
+        i = 0
+        for domain_label, dataset in random_order.items():
+            model = models[tabular_domain_labels[domain_label]]
+            optimizer = optimizers[model]
+            scheduler = schedulers[optimizer]
+            train_loader = train_loaders[domain_label]
 
-        # ----------------- EVAL PASS (for each domain) -----------------
+            for batch_idx, batch_data in enumerate(train_loader):
+                if batch_data is None:
+                    continue
+                single_batch_loss = train(config, model, optimizer, batch_data, device, domain_label, scheduler)
+                epoch_train_loss += single_batch_loss
+                i += 1
+        avg_train_loss = epoch_train_loss / i
+        wandb.log({"epoch_train_loss": avg_train_loss})
+        print(f"Epoch {epoch + 1} complete. Avg training loss = {avg_train_loss:.4f}")
         epoch_eval_loss_mse = 0.0
         if config.do_eval:
             for domain_label, dataset in tabular_domain_labels.items():
@@ -482,52 +521,18 @@ def do(config):
                     domain_label
                 )
                 epoch_eval_loss_mse += domain_eval_mse
-
             avg_eval_mse = epoch_eval_loss_mse / len(tabular_domains)
             early_stopper(avg_eval_mse)
             if early_stopper.early_stop:
                 print("Early stopping triggered. Stopping training.")
                 break
-
-        # ----------------- TRAINING PASS -----------------
-        epoch_train_loss = 0.0
-        randomized_labels = list(np.random.permutation(list(tabular_domain_labels.keys())))
-        random_order = dict(zip(
-            randomized_labels,
-            map(lambda x: tabular_domain_labels.get(x), randomized_labels)
-        ))
-
-        for domain_label, dataset in random_order.items():
-            model = models[tabular_domain_labels[domain_label]]
-            optimizer = optimizers[model]
-            scheduler = schedulers[optimizer]
-            train_loader = train_loaders[domain_label]
-
-            for batch_idx, batch_data in enumerate(train_loader):
-                if batch_data is None:
-                    continue
-
-                single_batch_loss = train(config, model, optimizer, batch_data, device, domain_label, scheduler)
-                epoch_train_loss += single_batch_loss
-                current_step += 1
-
-                # (1) -- Make the save logic actually call `save(...)` directly
-                if current_step % config.save_every == 0:
-                    save(
-                        models,
-                        optimizers,
-                        dir=(
-                            f"/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/ppg/saved_models/"
-                            f"{'integrated_' if config.do_integration else ''}"
-                        )
+            if avg_eval_mse <= early_stopper.best_score:
+                save(
+                    models,
+                    optimizers,
+                    dir=(
+                        f"/net/mraid20/ifs/wisdom/segal_lab/jasmine/zach/ppg/saved_models/"
+                        f"{'integrated_' if config.do_integration else ''}"
                     )
-
-                if current_step % config.eval_every == 0 and config.do_eval:
-                    do_eval_pass(config, model, eval_loaders[domain_label], device, domain_label)
-
-        num_domains = len(tabular_domains)
-        avg_train_loss = epoch_train_loss / num_domains
-        wandb.log({"epoch_train_loss": avg_train_loss})
-        print(f"Epoch {epoch + 1} complete. Avg training loss = {avg_train_loss:.4f}")
-
+                )
     print("Training loop completed.")

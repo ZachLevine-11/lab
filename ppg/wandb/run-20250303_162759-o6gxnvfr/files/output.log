@@ -1,0 +1,17 @@
+
+Using cuda
+Epoch 1/250
+tensor(47.0579, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(48.7691, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(39.7915, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(37.1853, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(31.9761, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(24.6709, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(34.0880, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(27.1345, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(25.4473, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(22.3348, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(28.3364, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(19.3593, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 1 complete. Avg training loss = 38.0569
+Epoch 2/250

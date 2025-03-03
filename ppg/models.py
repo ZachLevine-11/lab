@@ -25,18 +25,16 @@ class EarlyStopper:
         Args:
             metric (float): Current value of the monitored metric (e.g., validation loss).
         """
-        score = -metric  # Assuming lower is better (e.g., loss)
-
         if self.best_score is None:
-            self.best_score = score
-        elif score < self.best_score + self.min_delta:
+            self.best_score = metric
+        elif metric >= self.best_score + self.min_delta:
             self.counter += 1
             if self.verbose:
                 print(f"EarlyStopper: No improvement for {self.counter}/{self.patience} epochs.")
             if self.counter >= self.patience:
                 self.early_stop = True
         else:
-            self.best_score = score
+            self.best_score = metric
             self.counter = 0
 
 class ConvLinear(nn.Module):
@@ -118,12 +116,13 @@ class PPGtoECG(torch.nn.Module):
     def __init__(self, hidden_size, num_layers, encoder_dropout_prob, encoder_lstm, decoder_lstm, num_baseline_features = 49, temperature = 1.0, dt = 0.1):
         super().__init__()
         self.encoding_size = 50
-        self.temperature = nn.Parameter(torch.FloatTensor([temperature]).to(torch.device("cuda" if torch.cuda.is_available() else "cpu")), requires_grad = True)
+        self.temperature = nn.Parameter(torch.FloatTensor([temperature]).to(torch.device("cuda" if torch.cuda.is_available() else "cpu")), requires_grad = False)
         self.training = True
-        self.dt = nn.Parameter(torch.FloatTensor([dt]).to(torch.device("cuda" if torch.cuda.is_available() else "cpu")), requires_grad = True)
+        self.dt = nn.Parameter(torch.FloatTensor([dt]).to(torch.device("cuda" if torch.cuda.is_available() else "cpu")), requires_grad = False)
         self.non_seq_proj1 = nn.Linear(hidden_size * num_layers *2,  # times 2 for bidirectional
                   out_features=self.encoding_size)
         self.drop = nn.Dropout1d(p = encoder_dropout_prob)
+        self.state_size = 3
         self.num_baseline_features = num_baseline_features
         if encoder_lstm is None:
             self.encoder_lstm = nn.LSTM(input_size=12, proj_size=0, hidden_size=hidden_size, num_layers=num_layers,
@@ -134,14 +133,13 @@ class PPGtoECG(torch.nn.Module):
         self.decoder_hidden_size = hidden_size
         self.decoder_num_layers = num_layers
         if decoder_lstm is None:
-            self.decoder_model = nn.LSTM(input_size=self.decoder_hidden_size, proj_size=0, hidden_size=self.decoder_hidden_size, num_layers=self.decoder_num_layers,
+            self.decoder_model = nn.LSTM(input_size=self.state_size, proj_size=0, hidden_size=self.decoder_hidden_size, num_layers=self.decoder_num_layers,
                                     batch_first=False, dropout=encoder_dropout_prob, bidirectional=False)
         else:
             self.decoder_model = decoder_lstm
         self.norm_in = torch.nn.BatchNorm1d(1)
         self.norm_out = torch.nn.BatchNorm1d(1)
         self.param_size = 23
-        self.state_size = 3
         self.register_buffer("param_lims", torch.FloatTensor(
             ##P
             [[-1.7, 1.7000e+00],
@@ -189,7 +187,6 @@ class PPGtoECG(torch.nn.Module):
                                       out_features= self.encoding_size)
         self.cat_act = nn.GELU()
         self.mixture_weights = nn.Parameter(torch.ones(3) / 3.0, requires_grad = True)
-        self.input_proj = nn.Linear(self.state_size, self.decoder_hidden_size)
         self.decoder_proj = ConvLinear(in_features=self.decoder_hidden_size, out_features=12, channel_last=True)
         self.norm = nn.LayerNorm(self.num_baseline_features)
 
@@ -235,7 +232,7 @@ class PPGtoECG(torch.nn.Module):
 
     def gaussian_pdf(self, x, mean, std, device):
         coeff = 1 / (std * torch.sqrt(torch.tensor([2], dtype=torch.float, requires_grad=True).to(device)))
-        exponent = -0.5 * ((x - mean) / (std + 1e-8))
+        exponent = -0.5 * ((x - mean) / (std))
         return coeff * torch.exp(exponent)
 
     def S(self, freq, params_rr, device):
@@ -248,15 +245,15 @@ class PPGtoECG(torch.nn.Module):
         return s1 + s2
 
     def make_Sf(self, params_rr, device):
-        f = torch.linspace(0, 0.5, 2**8, requires_grad=True).to(device)
+        f = torch.linspace(0, 0.5, 2**4, requires_grad=True).to(device)
         S_f = self.S(f, params_rr, device)
         return S_f, f
 
     def make_Tn(self, params_rr, device):
         S_f, f = self.make_Sf(params_rr, device)
         amplitudes = torch.sqrt(S_f)
-        phases = torch.linspace(0, 1, 2**8, requires_grad = False).to(device) * 2 * torch.pi
-        T = torch.fft.ifft(torch.polar(amplitudes, phases), n = 2**8).real + 0
+        phases = torch.linspace(0, 1, 2**4, requires_grad = True).to(device) * 2 * torch.pi
+        T = torch.fft.ifft(torch.polar(amplitudes, phases), n = 2**4).real + 0
         return T
 
     ## the normal sigmoid is too aggressive a constraint and we loose too much resolution if we use it
@@ -296,7 +293,7 @@ class PPGtoECG(torch.nn.Module):
             dstate_temp, theta_is_close_to_zero = self.ecg_dynamics(param, state,  operative_Tn.reshape(-1, 1))  # With just one heartbeat, it doesn't matter
             norms = torch.linalg.vector_norm(dstate_temp, ord=2, dim=-1, keepdim=True)
             threshold = 1e6
-            scaling_factors = torch.where(norms > threshold, threshold / norms, torch.ones_like(norms))
+            scaling_factors = torch.where(norms > threshold, threshold / norms, torch.ones_like(norms, requires_grad=True))
             clipped_dstate_temp = dstate_temp * scaling_factors
             dstates = clipped_dstate_temp.view(-1, 3)
             state = state + dstates * torch.exp(self.dt)
@@ -329,7 +326,7 @@ class PPGtoECG(torch.nn.Module):
         else:
             nonseq_encoding_sample = z_in
         states, param, init_state, jac = self.decode(nonseq_encoding_sample, length_sim, length_window, device)
-        decoder_input = self.input_proj(states).permute(1, 0, 2) #[batch, time, state] --> [time, batch, state]
+        decoder_input = states.permute(1, 0, 2) #[batch, time, state] --> [time, batch, state]
         output, (_, _) = self.decoder_model(decoder_input)
         decoding = self.decoder_proj(output)
         return decoding, jac

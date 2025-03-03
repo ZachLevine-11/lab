@@ -1,0 +1,14 @@
+
+Using cuda
+Epoch 1/250
+tensor(58.3006, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(53.1691, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(42.2691, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(35.6687, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(48.2182, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(34.9621, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(33.6272, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(31.8030, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(27.9810, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(26.2221, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(23.9028, device='cuda:0', grad_fn=<MulBackward0>)

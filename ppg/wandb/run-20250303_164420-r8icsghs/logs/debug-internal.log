@@ -1,0 +1,223 @@
+2025-03-03 16:44:20,976 INFO    StreamThr :3473956 [internal.py:wandb_internal():85] W&B internal server running at pid: 3473956, started at: 2025-03-03 16:44:20.974283
+2025-03-03 16:44:20,978 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status
+2025-03-03 16:44:20,995 INFO    WriterThread:3473956 [datastore.py:open_for_write():87] open: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/run-r8icsghs.wandb
+2025-03-03 16:44:20,997 DEBUG   SenderThread:3473956 [sender.py:send():379] send: header
+2025-03-03 16:44:21,009 DEBUG   SenderThread:3473956 [sender.py:send():379] send: run
+2025-03-03 16:44:21,638 INFO    SenderThread:3473956 [dir_watcher.py:__init__():211] watching files in: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files
+2025-03-03 16:44:21,638 INFO    SenderThread:3473956 [sender.py:_start_run_threads():1188] run started: r8icsghs with start time 1741013060.974194
+2025-03-03 16:44:21,659 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: check_version
+2025-03-03 16:44:21,659 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: check_version
+2025-03-03 16:44:21,958 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: run_start
+2025-03-03 16:44:22,001 DEBUG   HandlerThread:3473956 [system_info.py:__init__():26] System info init
+2025-03-03 16:44:22,001 DEBUG   HandlerThread:3473956 [system_info.py:__init__():41] System info init done
+2025-03-03 16:44:22,001 INFO    HandlerThread:3473956 [system_monitor.py:start():194] Starting system monitor
+2025-03-03 16:44:22,002 INFO    SystemMonitor:3473956 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-03 16:44:22,002 INFO    HandlerThread:3473956 [system_monitor.py:probe():214] Collecting system info
+2025-03-03 16:44:22,003 INFO    SystemMonitor:3473956 [interfaces.py:start():188] Started cpu monitoring
+2025-03-03 16:44:22,004 INFO    SystemMonitor:3473956 [interfaces.py:start():188] Started disk monitoring
+2025-03-03 16:44:22,008 INFO    SystemMonitor:3473956 [interfaces.py:start():188] Started gpu monitoring
+2025-03-03 16:44:22,010 INFO    SystemMonitor:3473956 [interfaces.py:start():188] Started memory monitoring
+2025-03-03 16:44:22,011 INFO    SystemMonitor:3473956 [interfaces.py:start():188] Started network monitoring
+2025-03-03 16:44:22,064 DEBUG   HandlerThread:3473956 [system_info.py:probe():152] Probing system
+2025-03-03 16:44:22,071 DEBUG   HandlerThread:3473956 [system_info.py:_probe_git():137] Probing git
+2025-03-03 16:44:22,094 DEBUG   HandlerThread:3473956 [system_info.py:_probe_git():145] Probing git done
+2025-03-03 16:44:22,094 DEBUG   HandlerThread:3473956 [system_info.py:probe():200] Probing system done
+2025-03-03 16:44:22,094 DEBUG   HandlerThread:3473956 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.3', 'heartbeatAt': '2025-03-03T14:44:22.064455', 'startedAt': '2025-03-03T14:44:20.940261', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/zacharyl/lab/ppg/single_run_wandb.py', 'codePathLocal': 'single_run_wandb.py', 'codePath': 'ppg/single_run_wandb.py', 'git': {'remote': 'git@github.com:ZachLevine-11/lab.git', 'commit': 'c25b41417841afaef12411c8e379e3a7d5aa1f63'}, 'email': 'zachary.levine@weizmann.ac.il', 'root': '/home/zacharyl/lab', 'host': 'n116.mcl11.weizmann.ac.il', 'username': 'zacharyl', 'executable': '/home/zacharyl/miniconda3/envs/deep_learning/bin/python', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2454.19359375, 'min': 1000.0, 'max': 3500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 1067.838, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}], 'disk': {'/': {'total': 78.1898422241211, 'used': 11.562549591064453}}, 'gpu': 'Quadro RTX 6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'Quadro RTX 6000', 'memory_total': 25769803776}], 'memory': {'total': 188.00299453735352}}
+2025-03-03 16:44:22,095 INFO    HandlerThread:3473956 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-03 16:44:22,095 INFO    HandlerThread:3473956 [system_monitor.py:probe():227] Publishing system info
+2025-03-03 16:44:22,095 DEBUG   HandlerThread:3473956 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-03-03 16:44:22,642 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/conda-environment.yaml
+2025-03-03 16:44:37,106 ERROR   HandlerThread:3473956 [system_info.py:_save_conda():223] Error saving conda packages: Command '['conda', 'env', 'export']' timed out after 15 seconds
+Traceback (most recent call last):
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/site-packages/wandb/sdk/internal/system/system_info.py", line 216, in _save_conda
+    subprocess.call(
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 391, in call
+    return p.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 1262, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 2005, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['conda', 'env', 'export']' timed out after 15 seconds
+2025-03-03 16:44:37,110 DEBUG   HandlerThread:3473956 [system_info.py:_save_conda():224] Saving conda packages done
+2025-03-03 16:44:37,113 INFO    HandlerThread:3473956 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-03 16:44:37,129 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:37,129 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-03 16:44:37,129 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:37,129 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-03 16:44:37,129 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:37,130 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-03 16:44:37,131 DEBUG   SenderThread:3473956 [sender.py:send():379] send: files
+2025-03-03 16:44:37,131 INFO    SenderThread:3473956 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-03-03 16:44:37,396 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: python_packages
+2025-03-03 16:44:37,397 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: python_packages
+2025-03-03 16:44:37,398 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-03 16:44:37,398 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:37,400 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: stop_status
+2025-03-03 16:44:37,650 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/wandb-metadata.json
+2025-03-03 16:44:37,651 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/requirements.txt
+2025-03-03 16:44:37,792 DEBUG   SenderThread:3473956 [sender.py:send():379] send: telemetry
+2025-03-03 16:44:37,936 INFO    wandb-upload_0:3473956 [upload_job.py:push():130] Uploaded file /local_data/80082_zacharyl/tmpto_4bc4bwandb/jorm57cv-wandb-metadata.json
+2025-03-03 16:44:38,418 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:39,417 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:40,421 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:41,417 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:42,398 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:42,417 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:43,426 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:44,432 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:45,431 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:46,427 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:47,399 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:47,805 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:48,848 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:50,070 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:51,079 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:52,077 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:52,408 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:52,467 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-03 16:44:52,671 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: stop_status
+2025-03-03 16:44:53,080 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:53,662 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/config.yaml
+2025-03-03 16:44:53,662 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log
+2025-03-03 16:44:54,117 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:55,343 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:55,664 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log
+2025-03-03 16:44:56,324 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:57,321 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:58,321 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:58,421 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:44:59,321 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:44:59,667 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log
+2025-03-03 16:45:00,263 DEBUG   SenderThread:3473956 [sender.py:send():379] send: telemetry
+2025-03-03 16:45:00,303 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: server_info
+2025-03-03 16:45:00,304 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: server_info
+2025-03-03 16:45:00,491 DEBUG   SenderThread:3473956 [sender.py:send():379] send: exit
+2025-03-03 16:45:00,491 INFO    SenderThread:3473956 [sender.py:send_exit():586] handling exit code: 1
+2025-03-03 16:45:00,491 INFO    SenderThread:3473956 [sender.py:send_exit():588] handling runtime: 38
+2025-03-03 16:45:00,494 INFO    SenderThread:3473956 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-03-03 16:45:00,494 INFO    SenderThread:3473956 [sender.py:send_exit():594] send defer
+2025-03-03 16:45:00,495 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,495 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 0
+2025-03-03 16:45:00,495 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,495 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 0
+2025-03-03 16:45:00,495 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 1
+2025-03-03 16:45:00,495 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,496 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 1
+2025-03-03 16:45:00,496 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,496 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 1
+2025-03-03 16:45:00,496 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 2
+2025-03-03 16:45:00,496 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,496 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 2
+2025-03-03 16:45:00,496 INFO    HandlerThread:3473956 [system_monitor.py:finish():203] Stopping system monitor
+2025-03-03 16:45:00,497 DEBUG   SystemMonitor:3473956 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-03 16:45:00,497 INFO    HandlerThread:3473956 [interfaces.py:finish():200] Joined cpu monitor
+2025-03-03 16:45:00,497 DEBUG   SystemMonitor:3473956 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-03 16:45:00,498 INFO    HandlerThread:3473956 [interfaces.py:finish():200] Joined disk monitor
+2025-03-03 16:45:00,498 DEBUG   SystemMonitor:3473956 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-03 16:45:00,561 INFO    HandlerThread:3473956 [interfaces.py:finish():200] Joined gpu monitor
+2025-03-03 16:45:00,561 INFO    HandlerThread:3473956 [interfaces.py:finish():200] Joined memory monitor
+2025-03-03 16:45:00,562 INFO    HandlerThread:3473956 [interfaces.py:finish():200] Joined network monitor
+2025-03-03 16:45:00,562 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,562 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 2
+2025-03-03 16:45:00,562 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 3
+2025-03-03 16:45:00,563 DEBUG   SenderThread:3473956 [sender.py:send():379] send: stats
+2025-03-03 16:45:00,563 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,564 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 3
+2025-03-03 16:45:00,564 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,564 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 3
+2025-03-03 16:45:00,564 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 4
+2025-03-03 16:45:00,564 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,564 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 4
+2025-03-03 16:45:00,565 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,565 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 4
+2025-03-03 16:45:00,565 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 5
+2025-03-03 16:45:00,565 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,565 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 5
+2025-03-03 16:45:00,565 DEBUG   SenderThread:3473956 [sender.py:send():379] send: summary
+2025-03-03 16:45:00,568 INFO    SenderThread:3473956 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2025-03-03 16:45:00,568 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,568 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 5
+2025-03-03 16:45:00,568 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 6
+2025-03-03 16:45:00,568 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,569 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 6
+2025-03-03 16:45:00,569 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,569 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 6
+2025-03-03 16:45:00,574 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: status_report
+2025-03-03 16:45:00,669 INFO    Thread-12 :3473956 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/wandb-summary.json
+2025-03-03 16:45:00,876 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 7
+2025-03-03 16:45:00,876 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:00,876 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 7
+2025-03-03 16:45:00,877 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:00,877 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 7
+2025-03-03 16:45:01,351 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 8
+2025-03-03 16:45:01,351 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:01,352 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 8
+2025-03-03 16:45:01,352 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:01,352 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 8
+2025-03-03 16:45:01,352 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 9
+2025-03-03 16:45:01,352 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:01,353 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 9
+2025-03-03 16:45:01,353 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:01,353 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 9
+2025-03-03 16:45:01,353 INFO    SenderThread:3473956 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-03-03 16:45:01,491 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-03 16:45:01,670 INFO    SenderThread:3473956 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log
+2025-03-03 16:45:01,670 INFO    SenderThread:3473956 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/config.yaml
+2025-03-03 16:45:01,671 INFO    SenderThread:3473956 [dir_watcher.py:finish():388] scan: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files
+2025-03-03 16:45:01,671 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/conda-environment.yaml conda-environment.yaml
+2025-03-03 16:45:01,672 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/config.yaml config.yaml
+2025-03-03 16:45:01,672 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/wandb-metadata.json wandb-metadata.json
+2025-03-03 16:45:01,672 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/requirements.txt requirements.txt
+2025-03-03 16:45:01,672 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log output.log
+2025-03-03 16:45:01,682 INFO    SenderThread:3473956 [dir_watcher.py:finish():402] scan save: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/wandb-summary.json wandb-summary.json
+2025-03-03 16:45:01,687 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 10
+2025-03-03 16:45:01,692 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: poll_exit
+2025-03-03 16:45:01,693 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:01,693 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 10
+2025-03-03 16:45:01,694 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:01,694 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 10
+2025-03-03 16:45:01,694 INFO    SenderThread:3473956 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-03 16:45:02,158 INFO    wandb-upload_1:3473956 [upload_job.py:push():130] Uploaded file /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/requirements.txt
+2025-03-03 16:45:02,265 INFO    wandb-upload_0:3473956 [upload_job.py:push():130] Uploaded file /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/config.yaml
+2025-03-03 16:45:02,387 INFO    wandb-upload_2:3473956 [upload_job.py:push():130] Uploaded file /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/output.log
+2025-03-03 16:45:02,400 INFO    wandb-upload_3:3473956 [upload_job.py:push():130] Uploaded file /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/files/wandb-summary.json
+2025-03-03 16:45:02,492 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-03 16:45:02,492 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: poll_exit
+2025-03-03 16:45:02,600 INFO    Thread-11 (_thread_body):3473956 [sender.py:transition_state():614] send defer: 11
+2025-03-03 16:45:02,601 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:02,601 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 11
+2025-03-03 16:45:02,601 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:02,601 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 11
+2025-03-03 16:45:02,601 INFO    SenderThread:3473956 [file_pusher.py:join():175] waiting for file pusher
+2025-03-03 16:45:02,602 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 12
+2025-03-03 16:45:02,602 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:02,602 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 12
+2025-03-03 16:45:02,602 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:02,602 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 12
+2025-03-03 16:45:02,603 INFO    SenderThread:3473956 [file_stream.py:finish():601] file stream finish called
+2025-03-03 16:45:02,887 INFO    SenderThread:3473956 [file_stream.py:finish():605] file stream finish is done
+2025-03-03 16:45:02,887 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 13
+2025-03-03 16:45:02,888 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:02,888 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 13
+2025-03-03 16:45:02,888 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:02,888 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 13
+2025-03-03 16:45:02,888 INFO    SenderThread:3473956 [sender.py:transition_state():614] send defer: 14
+2025-03-03 16:45:02,889 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: defer
+2025-03-03 16:45:02,889 INFO    HandlerThread:3473956 [handler.py:handle_request_defer():184] handle defer: 14
+2025-03-03 16:45:02,889 DEBUG   SenderThread:3473956 [sender.py:send():379] send: final
+2025-03-03 16:45:02,889 DEBUG   SenderThread:3473956 [sender.py:send():379] send: footer
+2025-03-03 16:45:02,890 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: defer
+2025-03-03 16:45:02,890 INFO    SenderThread:3473956 [sender.py:send_request_defer():610] handle sender defer: 14
+2025-03-03 16:45:02,891 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: poll_exit
+2025-03-03 16:45:02,891 DEBUG   SenderThread:3473956 [sender.py:send_request():406] send_request: poll_exit
+2025-03-03 16:45:02,892 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-03 16:45:02,893 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: get_summary
+2025-03-03 16:45:02,893 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: sampled_history
+2025-03-03 16:45:02,894 DEBUG   HandlerThread:3473956 [handler.py:handle_request():158] handle_request: shutdown
+2025-03-03 16:45:02,894 INFO    HandlerThread:3473956 [handler.py:finish():882] shutting down handler
+2025-03-03 16:45:03,891 INFO    WriterThread:3473956 [datastore.py:close():296] close: /home/zacharyl/lab/ppg/wandb/run-20250303_164420-r8icsghs/run-r8icsghs.wandb
+2025-03-03 16:45:03,892 INFO    SenderThread:3473956 [sender.py:finish():1608] shutting down sender
+2025-03-03 16:45:03,892 INFO    SenderThread:3473956 [file_pusher.py:finish():169] shutting down file pusher
+2025-03-03 16:45:03,892 INFO    SenderThread:3473956 [file_pusher.py:join():175] waiting for file pusher

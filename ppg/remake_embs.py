@@ -3,12 +3,12 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 import numpy as np
 import pandas as pd
 import torch
-from all_to_ecg import loader_set_dict, do_forward, get_label, batch_director, add_input, make_ecg_fmap, load_split, extract_domain_name
+from all_to_ecg import loader_set_dict, do_forward, get_label, make_ecg_fmap, load_split, extract_domain_name
 import numpy as np
 import pandas as pd
 from collections import defaultdict
 import os
-from datasets import ecg_dataset_pheno, tenk_tabular_dataset, sleep_dataset_pheno
+from datasets import ecg_dataset_pheno, get_domain_dataloaders, tenk_tabular_dataset, preprocess, min_max_scaling, max_ecg_val, min_ecg_val
 from single_run_wandb import sweep_configuration as config
 from LabData.DataLoaders.ECGTextLoader import ECGTextLoader
 
@@ -37,8 +37,8 @@ def make_embs(z_dict):
     return z_dict
 
 def extract_dist_all(ds_ecg, device, config, tabular_domains, models, tabular_datasets, tabular_domain_labels, do_integrated = False, return_dist = False, save = True):
-    length_sim = 400
-    length_window = 4000
+    length_sim = config["length_sim"]
+    length_window = config["length_window"]
     for i in range(len(tabular_datasets)):
         z_first_all, z_second_all, dist_first_all, dist_second_all = defaultdict(dict), defaultdict(dict), defaultdict(
             dict), defaultdict(dict)
@@ -51,22 +51,31 @@ def extract_dist_all(ds_ecg, device, config, tabular_domains, models, tabular_da
             operative_label_for_split = label
         labelkey = inverse_load_set_dict[(f"{operative_label_for_split}.pth",)]
         train_people, eval_people, test_people = load_split(loader_set=labelkey)
-        eval_batches = np.array_split(np.random.choice(eval_people, size=len(eval_people), replace=False),
-                                      max(len(eval_people) // 20, 1))
-        for batch_eval in eval_batches:
-            ecg_true_interp_eval, ecg_no_interp_eval, ids_tenk_existing_data_eval = batch_director(
-                batch_eval, ds_ecg, device, config, length_sim, length_window)
-            ecg_true_interp_eval, inputs_eval = add_input(ids_tenk_existing_data_eval, ds_input, ecg_true_interp_eval, length_sim, device)
-            z_first_all[label][tuple(ids_tenk_existing_data_eval)], z_second_all[label][tuple(ids_tenk_existing_data_eval)], dist_first_all[label][tuple(ids_tenk_existing_data_eval)], dist_second_all[label][tuple(ids_tenk_existing_data_eval)] = extract_dist(config, model,
+        __, eval_loaders = get_domain_dataloaders(
+            train_people,
+            eval_people,
+            ds_ecg,
+            tabular_domain_labels,  # {label: dataset}
+            config
+        )
+        eval_loader = eval_loaders[label.split("_integrated")[0]]
+        for batch_idx, batch_data in enumerate(eval_loader):
+            if batch_data is None:
+                continue
+            ecg_no_interp_eval = batch_data["ecg_no_interp"].to(device)
+            ecg_true_interp_eval = batch_data["ecg_true_interp"].to(device)
+            input_feats_eval = batch_data["tabular_feats"].to(device)
+            tenk_ids = batch_data["tenk_id"]
+            z_first_all[label][tuple(tenk_ids)], z_second_all[label][tuple(tenk_ids)], dist_first_all[label][tuple(tenk_ids)], dist_second_all[label][tuple(tenk_ids)] = extract_dist(config, model,
                                                                       ecg_true_interp_eval,
                                                                       ecg_no_interp_eval,
-                                                                      inputs_eval, length_sim, length_window)
+                                                                      input_feats_eval, length_sim, length_window)
 
         z_first_all, z_second_all = make_embs(z_first_all), make_embs(z_second_all)
-        if save:
-            for k in z_second_all.keys():
-                z_second_all[k].to_csv(f"{saved_emb_dir}{k}_time.csv")
-                z_first_all[k].to_csv(f"{saved_emb_dir}{k}.csv")
+    if save:
+        for k in z_second_all.keys():
+            z_second_all[k].to_csv(f"{saved_emb_dir}{k}_time.csv")
+            z_first_all[k].to_csv(f"{saved_emb_dir}{k}.csv")
     if return_dist:
         return dist_first_all, dist_second_all
     else:
@@ -106,9 +115,10 @@ def load_things(saved_model_dir, do_integrated):
         saved_models = [x for x in os.listdir(saved_model_dir) if x.endswith(".pth") and not x.startswith("integrated_")]
     checkpoints = dict(zip(saved_models, [torch.load(saved_model_dir + x, map_location=device) for x in saved_models]))
     tabular_domains = [extract_domain_name(k.split("integrated_")[-1] if "integrated_" in k else k) for k in checkpoints]
-    tabular_domain_labels = dict(zip(tabular_domains, list(
-        map(lambda x: x if x == "RNA" or x == "iglu" else str(x).split(".")[2].split("Loader")[0], tabular_domains))))
     tabular_datasets = [tenk_tabular_dataset(x) for x in tabular_domains]
+    labels = list(
+        map(lambda x: x if x == "RNA" or x == "iglu" else str(x).split(".")[2].split("Loader")[0], tabular_domains))
+    tabular_domain_labels = dict(zip(labels, tabular_datasets))
     datasets_to_checkpoints = {dict(zip(tabular_domains, tabular_datasets))[
                                    extract_domain_name(k.split("integrated_")[-1] if "integrated_" in k else k)]: v for
                                k, v
@@ -131,8 +141,9 @@ if __name__ == "__main__":
     ecg_fmap = make_ecg_fmap(tenk_id_list=all_samples_ecg, files=ecg_files, from_cache=True)
     ds_ecg = ecg_dataset_pheno(all_samples_ecg=all_samples_ecg, fmap=ecg_fmap)
     print("Using " + str(device))
-    do_integrated = False
+    do_integrated = True
     do_z_gen = True
+    config = {k:v["values"][0] for k, v in config["parameters"].items()}
     if do_z_gen:
         tabular_datasets, tabular_domains, tabular_domain_labels, checkpoints, datasets_to_checkpoints = load_things(saved_model_dir, do_integrated)
         models = {k: v["model"].to(device) for k, v in datasets_to_checkpoints.items()}

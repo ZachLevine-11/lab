@@ -1,0 +1,6 @@
+
+Using cuda
+Epoch 1/250
+tensor(199.8420, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(202.0351, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.6410, device='cuda:0', grad_fn=<MulBackward0>)

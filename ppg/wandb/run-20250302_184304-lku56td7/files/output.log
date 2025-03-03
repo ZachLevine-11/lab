@@ -1,0 +1,79 @@
+
+Using cuda
+Epoch 1/250
+tensor(196.6568, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(199.3948, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.4136, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.4001, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.6620, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.0683, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(196.5032, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.3995, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(195.6303, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(199.7764, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(195.0905, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(193.9532, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 1 complete. Avg training loss = 216.6652
+Epoch 2/250
+tensor(199.6435, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.8544, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(199.1479, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.0038, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(192.5271, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.8196, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(203.6522, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(196.1319, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.2034, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(204.3780, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.0362, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(206.3866, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 2 complete. Avg training loss = 214.8693
+Epoch 3/250
+tensor(198.5779, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(194.8923, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(199.9823, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.0086, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.9385, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(203.9688, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.9934, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.8549, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.5138, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.7513, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.7296, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(195.0027, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 3 complete. Avg training loss = 211.2429
+Epoch 4/250
+tensor(199.5003, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.9691, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.4079, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.6380, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(201.3618, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.9638, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(199.5908, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.2430, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(196.8050, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.8355, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.7610, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(189.7408, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 4 complete. Avg training loss = 205.1350
+Epoch 5/250
+tensor(196.4178, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.1834, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.8221, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(194.4316, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(195.8809, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(197.5618, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(196.7118, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(193.9793, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(195.1865, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.9173, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.9098, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(198.5079, device='cuda:0', grad_fn=<MulBackward0>)
+Epoch 5 complete. Avg training loss = 202.1605
+Epoch 6/250
+tensor(197.9459, device='cuda:0', grad_fn=<MulBackward0>)
+/home/zacharyl/lab/ppg/all_to_ecg.py:66: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  plt.figure(figsize = (40, 15))
+tensor(200.4908, device='cuda:0', grad_fn=<MulBackward0>)
+Early stopping triggered. Stopping training.
+Training loop completed.

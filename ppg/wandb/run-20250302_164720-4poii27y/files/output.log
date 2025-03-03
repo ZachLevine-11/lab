@@ -1,0 +1,9 @@
+
+Using cuda
+Epoch 1/250
+/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/site-packages/torch/nn/modules/transformer.py:306: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+tensor(200.6086, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(200.5942, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(202.4485, device='cuda:0', grad_fn=<MulBackward0>)
+tensor(201.0888, device='cuda:0', grad_fn=<MulBackward0>)
