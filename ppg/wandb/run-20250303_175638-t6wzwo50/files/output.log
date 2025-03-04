@@ -1,4 +1,0 @@
-
-Using cuda
-Epoch 1/250
-tensor(43.8615, device='cuda:0', grad_fn=<MulBackward0>)

@@ -1,1 +1,0 @@
-{"BodyMeasures_MSE second eval": 43.86146545410156, "_timestamp": 1741017439.223468, "_runtime": 41.11627197265625, "_step": 5, "BodyMeasures_jac eval": 0.31170374155044556, "BodyMeasures_time second eval": 44.17316818237305, "BodyMeasures_kl2  eval": 0.13580261170864105, "BodyMeasures _kl eval": 0, "BodyMeasures _total eval": 44.3089714050293, "_wandb": {"runtime": 48}}
