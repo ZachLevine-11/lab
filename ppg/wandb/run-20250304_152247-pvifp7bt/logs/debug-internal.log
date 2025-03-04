@@ -1,0 +1,69 @@
+2025-03-04 15:22:47,275 INFO    StreamThr :3594156 [internal.py:wandb_internal():85] W&B internal server running at pid: 3594156, started at: 2025-03-04 15:22:47.273215
+2025-03-04 15:22:47,277 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: status
+2025-03-04 15:22:47,301 INFO    WriterThread:3594156 [datastore.py:open_for_write():87] open: /home/zacharyl/lab/ppg/wandb/run-20250304_152247-pvifp7bt/run-pvifp7bt.wandb
+2025-03-04 15:22:47,303 DEBUG   SenderThread:3594156 [sender.py:send():379] send: header
+2025-03-04 15:22:47,314 DEBUG   SenderThread:3594156 [sender.py:send():379] send: run
+2025-03-04 15:22:47,881 INFO    SenderThread:3594156 [dir_watcher.py:__init__():211] watching files in: /home/zacharyl/lab/ppg/wandb/run-20250304_152247-pvifp7bt/files
+2025-03-04 15:22:47,882 INFO    SenderThread:3594156 [sender.py:_start_run_threads():1188] run started: pvifp7bt with start time 1741094567.274113
+2025-03-04 15:22:47,903 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: check_version
+2025-03-04 15:22:47,903 DEBUG   SenderThread:3594156 [sender.py:send_request():406] send_request: check_version
+2025-03-04 15:22:48,164 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: run_start
+2025-03-04 15:22:48,210 DEBUG   HandlerThread:3594156 [system_info.py:__init__():26] System info init
+2025-03-04 15:22:48,210 DEBUG   HandlerThread:3594156 [system_info.py:__init__():41] System info init done
+2025-03-04 15:22:48,211 INFO    HandlerThread:3594156 [system_monitor.py:start():194] Starting system monitor
+2025-03-04 15:22:48,211 INFO    SystemMonitor:3594156 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-04 15:22:48,211 INFO    HandlerThread:3594156 [system_monitor.py:probe():214] Collecting system info
+2025-03-04 15:22:48,213 INFO    SystemMonitor:3594156 [interfaces.py:start():188] Started cpu monitoring
+2025-03-04 15:22:48,213 INFO    SystemMonitor:3594156 [interfaces.py:start():188] Started disk monitoring
+2025-03-04 15:22:48,215 INFO    SystemMonitor:3594156 [interfaces.py:start():188] Started gpu monitoring
+2025-03-04 15:22:48,216 INFO    SystemMonitor:3594156 [interfaces.py:start():188] Started memory monitoring
+2025-03-04 15:22:48,219 INFO    SystemMonitor:3594156 [interfaces.py:start():188] Started network monitoring
+2025-03-04 15:22:48,272 DEBUG   HandlerThread:3594156 [system_info.py:probe():152] Probing system
+2025-03-04 15:22:48,278 DEBUG   HandlerThread:3594156 [system_info.py:_probe_git():137] Probing git
+2025-03-04 15:22:48,299 DEBUG   HandlerThread:3594156 [system_info.py:_probe_git():145] Probing git done
+2025-03-04 15:22:48,299 DEBUG   HandlerThread:3594156 [system_info.py:probe():200] Probing system done
+2025-03-04 15:22:48,299 DEBUG   HandlerThread:3594156 [system_monitor.py:probe():223] {'os': 'Linux-4.18.0-513.18.1.el8_9.x86_64-x86_64-with-glibc2.28', 'python': '3.11.3', 'heartbeatAt': '2025-03-04T13:22:48.273051', 'startedAt': '2025-03-04T13:22:47.244209', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/zacharyl/lab/ppg/single_run_wandb.py', 'codePathLocal': 'single_run_wandb.py', 'codePath': 'ppg/single_run_wandb.py', 'git': {'remote': 'git@github.com:ZachLevine-11/lab.git', 'commit': 'e4b8fb6e56ee5cd8ba109e91bbae4f71cc8feeee'}, 'email': 'zachary.levine@weizmann.ac.il', 'root': '/home/zacharyl/lab', 'host': 'n116.mcl11.weizmann.ac.il', 'username': 'zacharyl', 'executable': '/home/zacharyl/miniconda3/envs/deep_learning/bin/python', 'cpu_count': 16, 'cpu_count_logical': 32, 'cpu_freq': {'current': 2453.12534375, 'min': 1000.0, 'max': 3500.0}, 'cpu_freq_per_core': [{'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2939.738, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 1000.008, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}, {'current': 2500.0, 'min': 1000.0, 'max': 3500.0}], 'disk': {'/': {'total': 78.1898422241211, 'used': 11.565971374511719}}, 'gpu': 'Quadro RTX 6000', 'gpu_count': 1, 'gpu_devices': [{'name': 'Quadro RTX 6000', 'memory_total': 25769803776}], 'memory': {'total': 188.00299453735352}}
+2025-03-04 15:22:48,300 INFO    HandlerThread:3594156 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-04 15:22:48,300 INFO    HandlerThread:3594156 [system_monitor.py:probe():227] Publishing system info
+2025-03-04 15:22:48,300 DEBUG   HandlerThread:3594156 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2025-03-04 15:22:48,884 INFO    Thread-12 :3594156 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250304_152247-pvifp7bt/files/conda-environment.yaml
+2025-03-04 15:23:03,312 ERROR   HandlerThread:3594156 [system_info.py:_save_conda():223] Error saving conda packages: Command '['conda', 'env', 'export']' timed out after 15 seconds
+Traceback (most recent call last):
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/site-packages/wandb/sdk/internal/system/system_info.py", line 216, in _save_conda
+    subprocess.call(
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 391, in call
+    return p.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 1262, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zacharyl/miniconda3/envs/deep_learning/lib/python3.11/subprocess.py", line 2005, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['conda', 'env', 'export']' timed out after 15 seconds
+2025-03-04 15:23:03,316 DEBUG   HandlerThread:3594156 [system_info.py:_save_conda():224] Saving conda packages done
+2025-03-04 15:23:03,319 INFO    HandlerThread:3594156 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-04 15:23:03,336 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 15:23:03,336 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-04 15:23:03,337 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 15:23:03,337 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-04 15:23:03,337 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 15:23:03,337 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: keepalive
+2025-03-04 15:23:03,338 DEBUG   SenderThread:3594156 [sender.py:send():379] send: files
+2025-03-04 15:23:03,338 INFO    SenderThread:3594156 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2025-03-04 15:23:03,589 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: python_packages
+2025-03-04 15:23:03,590 DEBUG   SenderThread:3594156 [sender.py:send_request():406] send_request: python_packages
+2025-03-04 15:23:03,591 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: stop_status
+2025-03-04 15:23:03,592 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:03,593 DEBUG   SenderThread:3594156 [sender.py:send_request():406] send_request: stop_status
+2025-03-04 15:23:03,893 INFO    Thread-12 :3594156 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250304_152247-pvifp7bt/files/wandb-metadata.json
+2025-03-04 15:23:03,893 INFO    Thread-12 :3594156 [dir_watcher.py:_on_file_created():271] file/dir created: /home/zacharyl/lab/ppg/wandb/run-20250304_152247-pvifp7bt/files/requirements.txt
+2025-03-04 15:23:03,949 DEBUG   SenderThread:3594156 [sender.py:send():379] send: telemetry
+2025-03-04 15:23:04,143 INFO    wandb-upload_0:3594156 [upload_job.py:push():130] Uploaded file /local_data/80153_zacharyl/tmp_ixe26e3wandb/z76c641f-wandb-metadata.json
+2025-03-04 15:23:04,596 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:05,597 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:06,598 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:07,599 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:08,593 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: status_report
+2025-03-04 15:23:08,598 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:09,605 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages
+2025-03-04 15:23:10,602 DEBUG   HandlerThread:3594156 [handler.py:handle_request():158] handle_request: internal_messages

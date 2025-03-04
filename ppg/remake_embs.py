@@ -51,14 +51,14 @@ def extract_dist_all(ds_ecg, device, config, tabular_domains, models, tabular_da
             operative_label_for_split = label
         labelkey = inverse_load_set_dict[(f"{operative_label_for_split}.pth",)]
         train_people, eval_people, test_people = load_split(loader_set=labelkey)
-        __, eval_loaders = get_domain_dataloaders(
+        __, test_loaders = get_domain_dataloaders( ##replace eval set with test set, a set on which the model was neither trained nor used as eval in the model (as a stopping condition)
             train_people,
-            eval_people,
+            test_people,
             ds_ecg,
             tabular_domain_labels,  # {label: dataset}
             config
         )
-        eval_loader = eval_loaders[label.split("_integrated")[0]]
+        eval_loader = test_loaders[label.split("_integrated")[0]]
         for batch_idx, batch_data in enumerate(eval_loader):
             if batch_data is None:
                 continue

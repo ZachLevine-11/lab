@@ -356,8 +356,8 @@ if __name__ == "__main__":
     short_labels = ['age', "Creatinine", "waist(cm)", 'Total_C', 'non_HDL_C', 'LDL_TG', 'HDL_TG']
     label_mapper = dict(zip(labels, short_labels))
 
-    cv(z_first_all_integrated_ecg["BodyMeasures_integrated_time"], features_df, what="age", how="ols", task="r")[
-        0].corr()
+    print(cv(z_first_all_integrated_ecg["BodyMeasures_integrated_time"], features_df, what="age", how="ols", task="r")[
+        0].corr())
 
     do_validation_figure_clincal = False
     if do_validation_figure_clincal:
